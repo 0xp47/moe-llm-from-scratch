@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+venv311/
+.env
+
+# Project Artifacts
+checkpoints/*.pt
+outputs/
+*.log
+train_log.txt
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (Optional: Keep custom text, ignore generated binaries if preferred)
+# Keeping founder.txt for repo
+# Keeping tokenizer.json for convenience (remove if you want to force regeneration)

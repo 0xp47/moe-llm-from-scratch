@@ -1,0 +1,15 @@
+defaults:
+  - model: aether_moe
+  - data: founder
+  - _self_
+
+# Training Hyperparameters
+train:
+  epochs: 3
+  lr: 3e-4
+  save_dir: "checkpoints"
+  device: "auto" # auto, cuda, cpu
+
+# System settings
+system:
+  num_workers: 0 # 0 for windows compatibility

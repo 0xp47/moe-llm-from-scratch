@@ -1,0 +1,32 @@
+# Full Training Data Configuration
+# Uses all available training data files for comprehensive learning
+
+# List of training data files
+data_files:
+  - "data/founder.txt"              # Identity and creator information
+  - "data/conversations.txt"        # General conversational AI training
+  - "data/programming_qa.txt"       # Programming fundamentals Q&A
+  - "data/ml_advanced.txt"          # Advanced ML/AI concepts
+  - "data/software_engineering.txt" # Software engineering concepts
+  - "data/general_assistant.txt"    # Wide-ranging assistant capabilities
+  - "data/reasoning_math.txt"       # Step-by-step reasoning and math
+  - "data/casual_conversations.txt" # Casual everyday conversations
+  - "data/friendly_chat.txt"        # Friendly chat with emotions/support
+  - "data/life_advice.txt"          # Life advice and motivation
+  - "data/ai_discussion.txt"        # Discussions about AI
+  - "data/writing_help.txt"         # Writing assistance examples
+  - "data/entertainment_recs.txt"   # Entertainment recommendations
+
+# Training parameters optimized for larger dataset
+block_size: 128            # Larger context window for longer responses
+batch_size: 16             # Larger batch for better gradient estimates
+train_split: 0.95          # More data for training, less for validation
+
+# Dataset processing options
+shuffle: true              # Shuffle data for better generalization
+drop_last: true            # Drop incomplete batches
+
+# Tokenizer settings
+tokenizer_path: "data/tokenizer.json"
+max_vocab_size: 32000      # Larger vocabulary for diverse content
+min_frequency: 2           # Include words appearing at least twice

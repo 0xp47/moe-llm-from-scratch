@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aether-ai"
+version = "2.5.0"
+description = "Enterprise-Grade Multimodal Intelligence Framework"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Proprietary"}
+authors = [
+    {name = "Jay Patrick Cano (0x3ef8)", email = "0x3ef8@gmail.com"},
+]
+keywords = ["ai", "transformer", "llm", "multimodal", "enterprise", "agent"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+]
+
+# Core dependencies required to run the framework
+dependencies = [
+    "torch>=2.0.0",           # Deep learning engine
+    "transformers>=4.30.0",   # Tokenization utilities
+    "hydra-core>=1.3.0",      # Configuration management
+    "omegaconf>=2.3.0",       # Config object handling
+    "fastapi>=0.100.0",       # API Server
+    "uvicorn[standard]>=0.23.0", # ASGI Server
+    "pydantic>=2.0.0",        # Data validation
+    "rich>=13.0.0",           # Terminal UI
+    "streamlit>=1.25.0",      # Web Interface
+    "tokenizers>=0.13.0",     # Fast BPE Tokenization
+    "requests>=2.31.0",       # API Client utilities
+    "numpy"
+]
+
+[project.urls]
+Homepage = "https://github.com/0x3EF8/AetherAI"
+Repository = "https://github.com/0x3EF8/AetherAI"
+Documentation = "https://github.com/0x3EF8/AetherAI/tree/main/docs"
+
+[project.optional-dependencies]
+# Tools for development and testing
+dev = [
+    "black",
+    "isort",
+    "pytest",
+    "flake8"
+]
+# Tools for GPU acceleration (optional placeholder)
+gpu = [
+    "triton" # Example
+]
+
+[project.scripts]
+# CLI Entry Points
+aether-train = "scripts.train:train_pro"
+aether-server = "scripts.server:main"
+aether-chat = "scripts.chat:main"
+aether-ui = "scripts.app:main" # Note: Streamlit usually runs via `streamlit run`, but this reserved if wrapped
+aether-tokenizer = "scripts.train_tokenizer:train_tokenizer"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["aether*"]
+
+[tool.setuptools.package-data]
+aether = ["py.typed"]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"

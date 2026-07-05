@@ -1,0 +1,5 @@
+# Data Configuration for Founder Dataset
+path: "data/founder.txt"
+block_size: 64
+batch_size: 4 # Small batch size for small data
+train_split: 0.9

@@ -1,0 +1,13 @@
+{
+  "total_samples": 300,
+  "categories": {
+    "coding": 50,
+    "conversation": 50,
+    "reasoning": 50,
+    "creative": 50,
+    "knowledge": 50,
+    "advice": 50
+  },
+  "generated_at": "2026-01-28T23:21:43.211827",
+  "teacher_model": "HuggingFaceTB/SmolLM2-360M-Instruct"
+}

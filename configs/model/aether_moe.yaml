@@ -1,0 +1,15 @@
+# Aether-1.0-MoE Configuration
+# Profile: Nano-MoE (Efficiency Optimized)
+
+d_model: 256 # Embedding Dimension
+nhead: 4 # Attention Heads
+num_layers: 4 # Total Layers (Dense/MoE interleaved)
+
+# Vocabulary
+# Note: This is overridden dynamically by train.py based on the loaded tokenizer.
+# Default legacy GPT-2 is 50257. Custom Aether tokenizer is ~441.
+vocab_size: 441
+
+# Activation & Normalization (Hardcoded in model class for v1.0)
+# - Activation: SwiGLU
+# - Norm: RMSNorm

@@ -1,0 +1,19 @@
+# Tiny Model Configuration - Optimized for very limited data
+# This configuration creates a ~1.4M parameter model (text-only)
+# Best for datasets under 500KB
+
+d_model: 64          # Minimal dimension
+nhead: 4             # 4 attention heads  
+num_layers: 2        # 2 transformer layers
+vocab_size: 8000     # Match tokenizer vocab
+
+# MoE Configuration
+num_experts: 2       # Minimal experts
+top_k: 1             # Only route to 1 expert
+
+# Regularization
+dropout: 0.3         # Higher dropout for small data
+
+# Multimodal (disabled for text-only to save 86M params!)
+enable_vision: false
+enable_audio: false

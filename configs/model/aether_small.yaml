@@ -1,0 +1,15 @@
+# Small Model Configuration - Optimized for limited data
+# This configuration creates a ~2M parameter model
+# Better suited for datasets under 1MB
+
+d_model: 128         # Reduced from 256
+nhead: 4             # 4 attention heads
+num_layers: 2        # Reduced from 4 layers  
+vocab_size: 8000     # Match tokenizer vocab
+
+# MoE Configuration
+num_experts: 4       # Reduced from 8
+top_k: 2
+
+# Regularization
+dropout: 0.2         # Add dropout to prevent overfitting
